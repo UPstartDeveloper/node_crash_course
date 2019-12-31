@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/UPstartDeveloper/node_crash_course/issues"
   },
-  "homepage": "https://github.com/UPstartDeveloper/node_crash_course#readme"
+  "homepage": "https://github.com/UPstartDeveloper/node_crash_course#readme",
+  "dependencies": {
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
 }
