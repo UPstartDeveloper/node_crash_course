@@ -1,0 +1,23 @@
+{
+  "name": "node_crash_course",
+  "version": "1.0.0",
+  "description": "Node crash course!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UPstartDeveloper/node_crash_course.git"
+  },
+  "keywords": [
+    "node",
+    "npm"
+  ],
+  "author": "Brad Traversy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UPstartDeveloper/node_crash_course/issues"
+  },
+  "homepage": "https://github.com/UPstartDeveloper/node_crash_course#readme"
+}
