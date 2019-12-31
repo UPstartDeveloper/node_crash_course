@@ -1,8 +1,13 @@
 // let's create an object literal that represents a person
-const person = {
-    'name': 'Bobby the Sealion',
-    'age': 76
-}
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
 
+    greeting() {
+        console.log(`Howday! How do you like my name? It's ${this.name}`);
+    }
+}
 // hey! let's export the object now:
-module.exports = person;
+module.exports = Person;
