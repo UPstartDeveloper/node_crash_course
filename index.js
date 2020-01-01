@@ -21,7 +21,7 @@ const server = http.createServer((req, res) => {
             }
         )
     }
-
+    // response for About page
     if (req.url == '/about') {
         fs.readFile(
             path.join(__dirname, 'public', 'about.html'),
@@ -33,6 +33,18 @@ const server = http.createServer((req, res) => {
                 res.end(content);
             }
         )
+    }
+    // response for JSON (i.e. we're making a RESTful API here)
+    if (req.url == '/api/users') {
+        // note: usually fetch data from database, but we'll hardcode stuff here
+        const users = [
+            { name: 'Bob Smith', age: 45},
+            { name: 'John Derrre', age: 67}
+        ];
+        // great, now let's return the JSON array above!
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        // turn the array into JSON
+        res.end(JSON.stringify(users));
     }
 });
 
