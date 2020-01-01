@@ -1,10 +1,19 @@
-const Logger = require('./logger');
+// import the core modules
+const http = require('http');
+const path = require('path');
+const fs = require('fs');
 
-// instaniate a logger object
-const logger = new Logger();
+// set up the server
+const server = http.createServer((req, res) => {
+    // print the request url - '/' represents the root
+    console.log(req.url);
+    // as a response, display some HTML
+    if(req.url == '/') {
+        res.end('<h1>Home Page</h1>');
+    }
+});
 
-// setup an event listener
-logger.on('message', data => console.log('Called listener: ', data));
+// PORT looks to environment variable, or defaults to 5000 (locally)
+const PORT = process.env.PORT || 5000;
 
-// Trigger the listener
-logger.log('Hello World');
+server.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
