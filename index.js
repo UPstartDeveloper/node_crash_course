@@ -9,9 +9,15 @@ const server = http.createServer((req, res) => {
     console.log(req.url);
     // as a response, display some HTML
     if(req.url == '/') {
-        // add a content type, HTTP header
-        res.writeHead(200, {"Content-Type": 'text/html'});
-        res.end('<h1>Home Page</h1>');
+        // response:
+        fs.readFile(
+            path.join(__dirname, 'public', 'index.html'), (err, content) => {
+                // error handling
+                if (err) throw err;
+                // display html, add HTTP header (status code and content type)
+                res.writeHead(200, {"Content-Type": 'text/html'});
+                res.end(content);
+        })
     }
 });
 
