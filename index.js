@@ -9,6 +9,8 @@ const server = http.createServer((req, res) => {
     console.log(req.url);
     // as a response, display some HTML
     if(req.url == '/') {
+        // add a content type, HTTP header
+        res.writeHead(200, {"Content-Type": 'text/html'});
         res.end('<h1>Home Page</h1>');
     }
 });
