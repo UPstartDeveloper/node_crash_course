@@ -2,7 +2,7 @@ const EventEmitter = require('events');
 const uuid = require('uuid'); // a module for generating Universally Unique Ids
 
 // generate an id
-console.log(uuid.v4());
+// console.log(uuid.v4());
 
 // subclass a Logger class from EventEmitter
 class Logger extends EventEmitter {

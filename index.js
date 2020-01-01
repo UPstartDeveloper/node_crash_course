@@ -1,7 +1,10 @@
-// try to print to the console
-console.log('Hello, and this is my first Node.js project!');
+const Logger = require('./logger');
 
-// try to import from another folder in this project, using vanilla JavaScript
-const Person = require('./person');
-const person1 = new Person('Bimpson the Tiger', 54); // instantiation
-person1.greeting();
+// instaniate a logger object
+const logger = new Logger();
+
+// setup an event listener
+logger.on('message', data => console.log('Called listener: ', data));
+
+// Trigger the listener
+logger.log('Hello World');
